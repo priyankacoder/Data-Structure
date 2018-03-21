@@ -1,0 +1,45 @@
+import java.io.*;
+import java.math.*;
+import java.text.*;
+import java.util.*;
+import java.util.regex.*;
+
+public class Solution {
+
+
+
+    public static void main(String[] args) {
+           Scanner scan = new Scanner(System.in);
+        int N = Integer.parseInt(scan.nextLine().trim());
+
+        String[] strings = new String[N];
+
+       
+
+        for (int stringsItr = 0; stringsItr < N; stringsItr++) {
+         String stringsItems = scan.nextLine();
+           // String stringsItem = stringsItems[stringsItr];
+            strings[stringsItr] = stringsItems;
+        }
+    int Q = Integer.parseInt(scan.nextLine().trim());
+
+        String[] queries = new String[Q];
+
+       
+
+        for (int queriesItr = 0; queriesItr < Q; queriesItr++) {
+             String queriesItems = scan.nextLine();
+            queries[queriesItr] = queriesItems;
+        }
+        int count = 0;
+        for(int i=0;i<Q;i++){
+            for(int j=0;j<N;j++){
+                if (queries[i].equals(strings[j])) {
+                    count++;
+               }
+            }
+            System.out.println(count);
+            count = 0;
+        }
+    }
+}
